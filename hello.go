@@ -15,6 +15,24 @@ func swap(x, y string) (string, string) {
 	return y, x
 }
 
+type Vertex struct {
+	X, Y float64
+}
+
+func (v Vertex) Abs() float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+// new
+type MyFloat float64
+
+func (f MyFloat) Abs() float64 {
+	if f < 0 {
+		return float64(-f)
+	}
+	return float64(f)
+}
+
 func main() {
 	fmt.Println("Hello, World!")
 	fmt.Println("The time is", time.Now())
@@ -28,4 +46,11 @@ func main() {
 
 	a, b := swap("hello", "world")
 	fmt.Println(a, b)
+
+	// new
+	v := Vertex{3, 4}
+	fmt.Println(v.Abs())
+
+	f := MyFloat(-math.Sqrt2)
+	fmt.Println(f.Abs())
 }
