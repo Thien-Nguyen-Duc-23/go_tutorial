@@ -337,7 +337,7 @@ func main() {
 	// fx := MyFloat(-math.Sqrt2)
 	// fmt.Println(fx.Abs())
 	fmt.Println("----------------- Pointer receivers -----------------")
-
+	mkdir
 }
 
 var (
